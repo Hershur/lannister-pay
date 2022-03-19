@@ -82,17 +82,17 @@ router.get('/', (_, res) => {
                         "string.empty": "The issuing company / organization for the entity is required.",
                     }),
                 Brand: Joi.string()
-                    .required()
+                    .allow('')
                     .messages({
-                        "string.empty": "The  card-type  brand is required.",
+                        "string.string": "The  card-type  brand must be a string.",
                     }),
                 Number: Joi.string()
                     .required()
                     .messages({
                         "string.empty": "The payment entity number (masked pan in case of credit/debit cards, bank account) is required.",
                     }),
-                SixID: Joi.number()
-                    .min(0)
+                SixID: Joi.alternatives()
+                    .try(Joi.string(), Joi.number())
                     .required()
                     .messages({
                         "string.empty": "The first six digits of the payment entity number is required.",
