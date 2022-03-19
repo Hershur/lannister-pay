@@ -28,7 +28,10 @@ export const truncateTable = async (req, res)=>{
 
     if(!result.Error){
         return res.status(200).json(result)
-    } else {
+    } else if(result.Error === 'Not allowed'){
+        return res.status(401).json(result)
+    }
+     else {
         return res.status(500).json(result)
     }
 }

@@ -10,7 +10,7 @@ export const saveFeesConfigService = async (feesConfigSpec)=> {
         
         if(saveFees){
             return {
-                status: "ok"
+                Status: "ok"
             }
         }
         
@@ -64,7 +64,7 @@ export const truncateTableService = async (secretKey)=> {
             const res = await truncateTableRepo();
             return { Message: 'Truncated'};
         } else {
-            return { Message: 'Secret key required'};
+            return { Error: 'Not allowed', Message: 'Secret key required'};
         }
         
     } catch (error) {
