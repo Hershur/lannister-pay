@@ -1,4 +1,4 @@
-# Lannister PAY
+# Lannister PAY (fictional)
 [![flutterwave logo](https://i0.wp.com/tech-ish.com/wp-content/uploads/2022/02/Flutterwave-new-logo_primary.jpg?fit=1600%2C889&ssl=1)](https://flutterwave.com)
 
 Payment processing involves several components / services. One of such is determining the processing fee to charge per transaction. This API is an NGN (Nigerian Naira) fee processing service for a fictional Payment Processor (LannisterPay).
